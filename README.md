@@ -2,7 +2,7 @@
 
 ![hexlet-check](https://github.com/arturyeszhanov/frontend-project-11/workflows/hexlet-check/badge.svg)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/ТВОЙ_БАДЖ/maintainability)](https://codeclimate.com/github/arturyeszhanov/frontend-project-11/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a2d4311ef127b1e3c4e5/maintainability)](https://codeclimate.com/github/arturyeszhanov/frontend-project-11/maintainability)
 
 ## 📌 Описание
 
