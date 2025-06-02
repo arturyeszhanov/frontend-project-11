@@ -2,6 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "RSS Агрегатор — приложение для чтения RSS-лент.",
+  "type": "module",
   "engines": {
   "node": ">=18"
   },
