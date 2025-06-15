@@ -18,6 +18,7 @@ initI18n().then(() => {
 
 
   elements.input.placeholder = i18next.t('form.placeholder');
+  document.querySelector('label[for="rss-url"]').textContent = i18next.t('form.placeholder');
   elements.submitButton.textContent = i18next.t('form.submit');
   document.title = i18next.t('title');
   document.querySelector('h1').textContent = i18next.t('title');
