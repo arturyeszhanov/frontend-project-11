@@ -1,22 +1,22 @@
+// src/locales/ru.js
 export default {
-    translation: {
-      title: 'RSS агрегатор',
-      subtitle: 'Начните читать RSS сегодня! Это легко, это красиво.',
-      example: 'Пример: https://ru.hexlet.io/lessons.rss',
-      form: {
-        placeholder: 'Ссылка RSS',
-        submit: 'Добавить',
-      },
-      feedback: {
-        success: 'RSS успешно загружен',
-        errors: {
-          required: 'Не должно быть пустым',
-          url: 'Ссылка должна быть валидным URL',
-          notOneOf: 'RSS уже существует',
-          network: 'Ошибка загрузки RSSсдуфк',
-          parsing: 'Ресурс не содержит валидный RSS',
-        },
-      },
+  translation: {
+    title: 'RSS агрегатор',
+    subtitle: 'Начните читать RSS сегодня! Это легко, это красиво.',
+    form: {
+      placeholder: 'Ссылка RSS',
+      submit: 'Добавить',
     },
-  };
-  
+    feeds: 'Фиды',
+    posts: 'Посты',
+    success: 'RSS успешно загружен',
+    example: 'Пример: https://lorem-rss.hexlet.app/feed',
+    errors: {
+      url: 'Ссылка должна быть валидным URL',
+      alreadyExists: 'RSS уже существует',
+      network: 'Ошибка сети',
+      parsing: 'Ресурс не содержит валидный RSS',
+      unknown: 'Неизвестная ошибка',
+    },
+  },
+};
