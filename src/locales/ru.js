@@ -12,6 +12,7 @@ export default {
     success: 'RSS успешно загружен',
     example: 'Пример: https://lorem-rss.hexlet.app/feed',
     errors: {
+      required: 'Поле обязательно для заполнения',
       url: 'Ссылка должна быть валидным URL',
       alreadyExists: 'RSS уже существует',
       network: 'Ошибка сети',
