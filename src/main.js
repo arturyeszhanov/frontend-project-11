@@ -8,6 +8,7 @@ import initI18n from './i18n.js';
 import validate from './validation.js';
 import render from './view.js';
 import parseRss from './parseRss.js';
+import updatePosts from './updatePosts.js';
 
 const buildProxyUrl = (url) => {
   const baseUrl = 'https://allorigins.hexlet.app/get';
@@ -33,6 +34,12 @@ const loadRss = (url) => {
       return parsed;
     });
 };
+
+
+
+
+
+
 
 const state = {
   form: {
@@ -84,13 +91,17 @@ initI18n().then(() => {
           title: item.title,
           link: item.link,
         }));
-
+      
         watchedState.feeds.unshift(feed);
         watchedState.posts.unshift(...posts);
-
+      
         watchedState.form.status = 'finished';
         elements.form.reset();
         elements.input.focus();
+      
+        if (watchedState.feeds.length === 1) {
+          updatePosts(watchedState);
+        }
       })
       .catch((err) => {
         watchedState.form.status = 'failed';
