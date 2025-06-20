@@ -18,7 +18,8 @@
 
 ---
 
-## 🌐 Демонстрация ▶️ [Открыть приложение](https://frontend-project-11-ruddy-phi.vercel.app/)
+## 🌐 Демонстрация ▶️ <a href="https://frontend-project-11-ruddy-phi.vercel.app/" target="_blank">Открыть приложение</a>
+
 
 ---
 
