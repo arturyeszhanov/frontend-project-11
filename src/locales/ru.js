@@ -4,7 +4,7 @@ export default {
     header: {
       title: 'RSS агрегатор',
       subtitle: 'Начните читать RSS сегодня! Это легко, это красиво.',
-    },    
+    },
     form: {
       placeholder: '',
       label: 'Ссылка RSS',

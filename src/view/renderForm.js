@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18next from 'i18next'
 
 const renderForm = (elements, form) => {
     const { input, feedback, submitButton } = elements
@@ -36,4 +36,4 @@ const renderForm = (elements, form) => {
     }
   }
 
-  export default renderForm;
+  export default renderForm

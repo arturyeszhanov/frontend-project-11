@@ -1,7 +1,7 @@
-import renderForm from './renderForm.js';
-import renderFeeds from './renderFeeds.js';
-import renderPosts from './renderPosts.js';
-import renderModal from './renderModal.js';
+import renderForm from './renderForm.js'
+import renderFeeds from './renderFeeds.js'
+import renderPosts from './renderPosts.js'
+import renderModal from './renderModal.js'
 
 export default (elements, state) => (path) => {
   const handlers = {
@@ -11,12 +11,12 @@ export default (elements, state) => (path) => {
     'posts': () => renderPosts(elements, state),
     'ui.viewedPosts': () => renderPosts(elements, state),
     'ui.modalPostId': () => {
-      const post = state.posts.find((p) => p.id === state.ui.modalPostId);
-      if (post) renderModal(elements, post);
+      const post = state.posts.find((p) => p.id === state.ui.modalPostId)
+      if (post) renderModal(elements, post)
     },
-  };
+  }
 
-  const handler = handlers[path];
-  if (handler) handler();
+  const handler = handlers[path]
+  if (handler) handler()
   
-};
+}
