@@ -92,24 +92,24 @@ initI18n().then(() => {
           url: parsed.url,
           title: parsed.feed.title,
           description: parsed.feed.description,
-          }
-      const posts = parsed.posts.map((item, index) => ({
-        id: `${feedId}-${index}`,
-        feedId,
-        title: item.title,
-        link: item.link,
-        description: item.description,
+        }
+        const posts = parsed.posts.map((item, index) => ({
+          id: `${feedId}-${index}`,
+          feedId,
+          title: item.title,
+          link: item.link,
+          description: item.description,
         }))
 
-      watchedState.feeds.unshift(feed)
-      watchedState.posts.unshift(...posts)
+        watchedState.feeds.unshift(feed)
+        watchedState.posts.unshift(...posts)
 
-      watchedState.form.status = 'finished'
-      elements.form.reset()
-      elements.input.focus()
+        watchedState.form.status = 'finished'
+        elements.form.reset()
+        elements.input.focus()
 
-      updatePosts(watchedState)
-    })
+        updatePosts(watchedState)
+      })
       .catch((err) => {
         watchedState.form.status = 'failed'
         watchedState.form.error = err.message
