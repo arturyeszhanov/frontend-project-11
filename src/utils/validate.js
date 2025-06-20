@@ -8,7 +8,7 @@ yup.setLocale({
   string: {
     url: () => 'url',
   },
-});
+})
 
 const buildSchema = (existingUrls) => yup
   .string()
@@ -16,4 +16,4 @@ const buildSchema = (existingUrls) => yup
   .required()
   .notOneOf(existingUrls)
 
-  export default (url, existingUrls) => buildSchema(existingUrls).validate(String(url))
+export default (url, existingUrls) => buildSchema(existingUrls).validate(String(url))

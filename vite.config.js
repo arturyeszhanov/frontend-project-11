@@ -1,7 +1,7 @@
-import { webcrypto } from 'crypto';
+import { webcrypto } from 'crypto'
 
 if (!globalThis.crypto) {
-  globalThis.crypto = webcrypto;
+  globalThis.crypto = webcrypto
 }
 
 import { defineConfig } from 'vite'

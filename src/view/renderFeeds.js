@@ -1,7 +1,7 @@
 import i18next from 'i18next'
 
 const renderFeeds = (elements, feeds) => {
-  const { feeds: feedsContainer } = elements;
+  const { feeds: feedsContainer } = elements
   feedsContainer.innerHTML = ''
 
   const card = document.createElement('div')
@@ -22,21 +22,21 @@ const renderFeeds = (elements, feeds) => {
 
   feeds.forEach((feed) => {
     const item = document.createElement('li')
-    item.classList.add('list-group-item', 'border-0', 'border-end-0');
+    item.classList.add('list-group-item', 'border-0', 'border-end-0')
 
     const title = document.createElement('h3')
     title.classList.add('h6', 'm-0')
-    title.textContent = feed.title;
+    title.textContent = feed.title
 
     const desc = document.createElement('p')
     desc.classList.add('m-0', 'small', 'text-black-50')
-    desc.textContent = feed.description;
+    desc.textContent = feed.description
 
     item.append(title, desc)
     list.append(item)
   })
 
-  card.append(list);
+  card.append(list)
   feedsContainer.append(card)
 }
 
