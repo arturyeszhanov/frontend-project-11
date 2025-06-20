@@ -84,22 +84,22 @@ initI18n().then(() => {
     watchedState.form.error = null
 
     validate(url, existingUrls)
-    .then(() => loadRss(url))
-    .then(parsed => {
+      .then(() => loadRss(url))
+      .then((parsed) => {
         const feedId = Date.now()
         const feed = {
-        id: feedId,
-        url: parsed.url,
-        title: parsed.feed.title,
-        description: parsed.feed.description,
-      }
+          id: feedId,
+          url: parsed.url,
+          title: parsed.feed.title,
+          description: parsed.feed.description,
+          }
       const posts = parsed.posts.map((item, index) => ({
         id: `${feedId}-${index}`,
         feedId,
         title: item.title,
         link: item.link,
         description: item.description,
-      }))
+        }))
 
       watchedState.feeds.unshift(feed)
       watchedState.posts.unshift(...posts)
@@ -109,7 +109,6 @@ initI18n().then(() => {
       elements.input.focus()
 
       updatePosts(watchedState)
-      
     })
       .catch((err) => {
         watchedState.form.status = 'failed'
