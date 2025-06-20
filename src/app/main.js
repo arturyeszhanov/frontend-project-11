@@ -5,34 +5,9 @@ import i18next from 'i18next';
 import onChange from 'on-change';
 import initI18n from '../utils/i18n.js';
 import validate from '../utils/validate.js';
-import parseRss from '../utils/parseRss.js';
+import loadRss from './loadRss.js';
 import render from '../view/render.js';
 import updatePosts from '../utils/updatePosts.js';
-
-const buildProxyUrl = (url) => {
-  const baseUrl = 'https://allorigins.hexlet.app/get';
-  const params = new URLSearchParams({
-    disableCache: 'true',
-    url,
-  });
-  return `${baseUrl}?${params.toString()}`
-};
-
-const loadRss = (url) => {
-  const proxyUrl = buildProxyUrl(url)
-  return fetch(proxyUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('network')
-      }
-      return response.json()
-    })
-    .then((data) => {
-      const parsed = parseRss(data.contents)
-      parsed.url = url
-      return parsed
-    });
-};
 
 const state = {
   form: {
@@ -114,9 +89,14 @@ initI18n().then(() => {
     validate(url, existingUrls)
       .then(() => loadRss(url))
       .then((parsed) => {
-        const feedId = Date.now();
-        const feed = { id: feedId, url: parsed.url, title: parsed.title, description: parsed.description };
-        const posts = parsed.items.map((item, index) => ({
+          const feedId = Date.now();
+          const feed = {
+          id: feedId,
+          url: parsed.url,
+          title: parsed.feed.title,
+          description: parsed.feed.description,
+        };
+        const posts = parsed.posts.map((item, index) => ({
           id: `${feedId}-${index}`,
           feedId,
           title: item.title,
