@@ -32,7 +32,7 @@ const updatePosts = (state) => {
   })
 
   Promise.all(promises).finally(() => {
-    setTimeout(() => updatePosts(state), 5000);
+    setTimeout(() => updatePosts(state), 5000)
   })
 }
 

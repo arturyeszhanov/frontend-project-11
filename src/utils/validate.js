@@ -10,7 +10,7 @@ yup.setLocale({
   },
 })
 
-const buildSchema = (existingUrls) => yup
+const buildSchema = existingUrls => yup
   .string()
   .url()
   .required()
