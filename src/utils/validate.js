@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 yup.setLocale({
   mixed: {
@@ -14,6 +14,6 @@ const buildSchema = (existingUrls) => yup
   .string()
   .url()
   .required()
-  .notOneOf(existingUrls);
+  .notOneOf(existingUrls)
 
-  export default (url, existingUrls) => buildSchema(existingUrls).validate(String(url));
+  export default (url, existingUrls) => buildSchema(existingUrls).validate(String(url))

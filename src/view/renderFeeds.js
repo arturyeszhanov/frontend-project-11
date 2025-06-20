@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18next from 'i18next'
 
 const renderFeeds = (elements, feeds) => {
   const { feeds: feedsContainer } = elements;
@@ -34,10 +34,10 @@ const renderFeeds = (elements, feeds) => {
 
     item.append(title, desc)
     list.append(item)
-  });
+  })
 
   card.append(list);
   feedsContainer.append(card)
-};
+}
 
-export default renderFeeds;
+export default renderFeeds
