@@ -67,14 +67,14 @@ initI18n().then(() => {
 
       watchedState.ui.modalPostId = postId
     }
-  
+
     if (target.tagName === 'A') {
       const updatedViewedPosts = new Set(watchedState.ui.viewedPosts)
       updatedViewedPosts.add(postId)
       watchedState.ui.viewedPosts = updatedViewedPosts
     }
   })
-  
+
   elements.form.addEventListener('submit', (e) => {
     e.preventDefault()
     const url = elements.input.value.trim()
@@ -84,33 +84,33 @@ initI18n().then(() => {
     watchedState.form.error = null
 
     validate(url, existingUrls)
-      .then(() => loadRss(url))
-      .then((parsed) => {
-          const feedId = Date.now()
-          const feed = {
-          id: feedId,
-          url: parsed.url,
-          title: parsed.feed.title,
-          description: parsed.feed.description,
-        }
-        const posts = parsed.posts.map((item, index) => ({
-          id: `${feedId}-${index}`,
-          feedId,
-          title: item.title,
-          link: item.link,
-          description: item.description,
-        }))
-      
-        watchedState.feeds.unshift(feed)
-        watchedState.posts.unshift(...posts)
-      
-        watchedState.form.status = 'finished'
-        elements.form.reset()
-        elements.input.focus()
+    .then(() => loadRss(url))
+    .then(parsed => {
+        const feedId = Date.now()
+        const feed = {
+        id: feedId,
+        url: parsed.url,
+        title: parsed.feed.title,
+        description: parsed.feed.description,
+      }
+      const posts = parsed.posts.map((item, index) => ({
+        id: `${feedId}-${index}`,
+        feedId,
+        title: item.title,
+        link: item.link,
+        description: item.description,
+      }))
 
-        updatePosts(watchedState)
-        
-      })
+      watchedState.feeds.unshift(feed)
+      watchedState.posts.unshift(...posts)
+
+      watchedState.form.status = 'finished'
+      elements.form.reset()
+      elements.input.focus()
+
+      updatePosts(watchedState)
+      
+    })
       .catch((err) => {
         watchedState.form.status = 'failed'
         watchedState.form.error = err.message
