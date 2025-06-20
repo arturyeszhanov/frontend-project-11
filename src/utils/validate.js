@@ -1,6 +1,5 @@
 import * as yup from 'yup';
 
-// Устанавливаем глобальные коды ошибок вместо текстов
 yup.setLocale({
   mixed: {
     required: () => 'required',
@@ -17,4 +16,4 @@ const buildSchema = (existingUrls) => yup
   .required()
   .notOneOf(existingUrls);
 
-export default (url, existingUrls) => buildSchema(existingUrls).validate(url);
+  export default (url, existingUrls) => buildSchema(existingUrls).validate(String(url));
