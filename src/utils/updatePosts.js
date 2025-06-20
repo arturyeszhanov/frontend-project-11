@@ -10,7 +10,7 @@ const updatePosts = (state) => {
   const promises = state.feeds.map((feed) => {
     return axios.get(getProxyUrl(feed.url))
       .then((response) => {
-        const { posts } = parseRss(response.data.contents); // ⬅ исправили здесь
+        const { posts } = parseRss(response.data.contents);
 
         const existingLinks = state.posts.map((post) => post.link);
 
