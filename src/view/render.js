@@ -11,12 +11,11 @@ export default (elements, state) => (path) => {
     'posts': () => renderPosts(elements, state),
     'ui.viewedPosts': () => renderPosts(elements, state),
     'ui.modalPostId': () => {
-      const post = state.posts.find((p) => p.id === state.ui.modalPostId)
+      const post = state.posts.find(p => p.id === state.ui.modalPostId)
       if (post) renderModal(elements, post)
     },
   }
 
   const handler = handlers[path]
   if (handler) handler()
-  
 }

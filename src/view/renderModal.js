@@ -9,7 +9,7 @@ const renderModal = (elements, post) => {
     modalInstance = new Modal(modal)
 
     modal.addEventListener('hidden.bs.modal', () => {
-      document.querySelectorAll('.modal-backdrop').forEach((backdrop) => backdrop.remove());
+      document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove())
       document.body.classList.remove('modal-open')
     })
   }

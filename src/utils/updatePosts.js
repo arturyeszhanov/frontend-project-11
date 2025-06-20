@@ -12,11 +12,11 @@ const updatePosts = (state) => {
       .then((response) => {
         const { posts } = parseRss(response.data.contents)
 
-        const existingLinks = state.posts.map((post) => post.link)
+        const existingLinks = state.posts.map(post => post.link)
 
         const newPosts = posts
-          .filter((post) => !existingLinks.includes(post.link))
-          .map((post) => ({
+          .filter(post => !existingLinks.includes(post.link))
+          .map(post => ({
             ...post,
             feedId: feed.id,
             id: post.link,

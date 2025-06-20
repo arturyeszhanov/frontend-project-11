@@ -55,30 +55,30 @@ initI18n().then(() => {
   elements.modalCloseButton.textContent = i18next.t('modal.close')
 
   elements.posts.addEventListener('click', (e) => {
-    const { target } = e;
+    const { target } = e
     if (!target || !target.dataset.id) return
 
     const postId = target.dataset.id
-  
+
     if (target.tagName === 'BUTTON') {
       const updatedViewedPosts = new Set(watchedState.ui.viewedPosts)
-      updatedViewedPosts.add(postId);
+      updatedViewedPosts.add(postId)
       watchedState.ui.viewedPosts = updatedViewedPosts
-  
+
       watchedState.ui.modalPostId = postId
     }
   
     if (target.tagName === 'A') {
       const updatedViewedPosts = new Set(watchedState.ui.viewedPosts)
-      updatedViewedPosts.add(postId);
-      watchedState.ui.viewedPosts = updatedViewedPosts;
+      updatedViewedPosts.add(postId)
+      watchedState.ui.viewedPosts = updatedViewedPosts
     }
   })
   
   elements.form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const url = elements.input.value.trim()
-    const existingUrls = watchedState.feeds.map((feed) => feed.url)
+    const existingUrls = watchedState.feeds.map(feed => feed.url)
 
     watchedState.form.status = 'submitting'
     watchedState.form.error = null
@@ -107,9 +107,9 @@ initI18n().then(() => {
         watchedState.form.status = 'finished'
         elements.form.reset()
         elements.input.focus()
-      
-        updatePosts(watchedState)
 
+        updatePosts(watchedState)
+        
       })
       .catch((err) => {
         watchedState.form.status = 'failed'
